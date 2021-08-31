@@ -13,9 +13,10 @@ body{
     flex-grow:1;
 }
 footer{
-    background: rgba(146, 145, 145, 0.472);
+    background: rgba(255, 255, 255, 0.555);
     text-align: center;
     margin-bottom: 12px;
+    border-radius: 14px;
     /* padding: 0.5px; */
 }
 header{
@@ -44,7 +45,7 @@ h1{
     position:relative;
 }
 p{
-    background-color: rgba(22, 22, 22, 0.2);
+    background: rgba(255, 255, 255, 0.555);
     padding: 10px;
     border-radius: 9px;
 }
