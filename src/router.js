@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const forecast = require('./utils/forecast');
+const geocode = require('./utils/geacode');
 
 router.get('', (req,res)=>{
     res.render('index',{
@@ -34,11 +36,18 @@ router.get('/weather', (req, res) => {
             error:'You must provide a valid address'
         })
     }
-    console.log(req.query.address);
-    res.send({
-        address:'Stockholm',
-        forecast: 'its currently sunny with no chance of rain and tempreture is 19 c'
-    });
+   geocode(req.query.address, (error, {latitude,longitude})=>{
+       if(error){
+           return res.send(404, { error })
+       }
+       forecast(latitude, longitude, (error, forecastData)=>{
+           if(error){
+               return res.render('404',{ error })
+           }
+           res.render('weather',{ forecastData , name: 'Yazan Abbas'});
+       })
+   })
+
 });
 router.get('*', (req,res)=>{
     res.render('404',{

@@ -8,7 +8,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (response.body.success = false) {
             callback('cannot find location, please insert a valid location', undefined);
         } else {
-            callback(undefined, response.body.location.region + ': ' + response.body.current.weather_descriptions[0] + '. its currently ' + response.body.current.temperature + ' celcius and it feels like ' + response.body.current.feelslike + ' celecius');
+            callback(undefined, response.body.location.region + ': ' + response.body.current.weather_descriptions[0] + '. its currently ' + response.body.current.temperature + ' celecius and it feels like ' + response.body.current.feelslike + ' celecius');
         }
     });
 }
