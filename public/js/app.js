@@ -1,5 +1,5 @@
 console.log('client side is up and running');
-const searchForm = document.querySelector('form');
+
 const search = document.querySelector('input');
 const button = document.querySelector('button');
 const results = document.getElementById('results');
@@ -23,8 +23,4 @@ button.addEventListener('click', (e) => {
 
 })
 
-// searchForm.addEventListener('submit', (e)=>{
-//     e.preventDefault();
-//     console.log('Ive been clicked',searchForm);
-// })
 
