@@ -28,15 +28,24 @@ router.get('/help/*', (req,res)=>{
         name:'Yazan Abbas'
     });
 });
+router.get('/weather', (req, res) => {
+    if(!req.query.address){
+        return res.render('404', {
+            error:'You must provide a valid address'
+        })
+    }
+    console.log(req.query.address);
+    res.send({
+        address:'Stockholm',
+        forecast: 'its currently sunny with no chance of rain and tempreture is 19 c'
+    });
+});
 router.get('*', (req,res)=>{
     res.render('404',{
-        title: "404 Page",
+        title: '404 Page',
         error:'Page not Found',
         name:'Yazan Abbas'
     });
-});
-router.get('/weather', (req, res) => {
-    res.send('WEATHER APPLICATION');
 });
 
 
