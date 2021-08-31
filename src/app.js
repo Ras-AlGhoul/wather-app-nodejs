@@ -3,6 +3,7 @@ const express = require('express');
 const router = require('./router');
 const app = express();
 const hbs = require('hbs');
+const port = process.env.PORT || 3000;
 
 // const public = path.join(__dirname,'../public');
 //no need for this if the templates folder called views 
@@ -16,6 +17,6 @@ app.set('views', viewsPath);//no need for this if the templates folder called vi
 hbs.registerPartials(partialPath);
 app.use(router);
 
-app.listen(3000, ()=>{
-    console.log('listening on port 3000')
+app.listen(port, ()=>{
+    console.log('listening on port '+ port)
 });
