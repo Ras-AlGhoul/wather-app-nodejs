@@ -36,7 +36,7 @@ router.get('/weather', (req, res) => {
             error:'You must provide a valid address'
         })
     }
-   geocode(req.query.address, (error, {latitude,longitude})=>{
+   geocode(req.query.address, (error, {latitude,longitude}={})=>{
        if(error){
            return res.send(404, { error })
        }
