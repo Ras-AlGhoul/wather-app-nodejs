@@ -1,5 +1,3 @@
-console.log('client side is up and running');
-
 const search = document.querySelector('input');
 const button = document.querySelector('button');
 const results = document.getElementById('results');
