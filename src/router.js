@@ -44,7 +44,6 @@ router.get('/weather', (req, res) => {
            if(error){
                return res.render('404',{ error })
            }
-           console.log(forecastData);
            res.send({ forecastData  });
        })
    })

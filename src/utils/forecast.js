@@ -4,7 +4,6 @@ dotenv.config();
 
 const forecast = (latitude, longitude, callback) => {
     const token = process.env.WEATHER_TOKEN;
-    console.log('AAA', token);
     const url = `http://api.weatherstack.com/current?access_key=${token}&query=${latitude},${longitude}`
     request({ url, json: true }, (error, response) => {
         if (error) {

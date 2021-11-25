@@ -5,7 +5,6 @@ const results = document.getElementById('results');
 
 button.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log(search.value);
     fetch(`/weather?address=${search.value}`)
         .then(res => {
             res.json().then(data => {

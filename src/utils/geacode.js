@@ -4,9 +4,7 @@ dotenv.config();
 
 const geacode = (address, callback) => {
   const token = process.env.GEOCODE_TOKEN;
-  console.log('AAA', token);
   const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${token}&limit=1`;
-  console.log(url);
   request({ url, json: true }, (error, response) => {
     if (error) {
       callback('unable to connect', undefined);
