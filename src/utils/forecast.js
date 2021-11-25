@@ -1,7 +1,11 @@
-const request = require("request");
+const request = require('request');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const forecast = (latitude, longitude, callback) => {
-    const url = `http://api.weatherstack.com/current?access_key=9758d3d126300bbf3550b7113655ec2a&query=${latitude},${longitude}`
+    const token = process.env.WEATHER_TOKEN;
+    console.log('AAA', token);
+    const url = `http://api.weatherstack.com/current?access_key=${token}&query=${latitude},${longitude}`
     request({ url, json: true }, (error, response) => {
         if (error) {
             callback('something wrong with the connection', undefined);
@@ -15,30 +19,3 @@ const forecast = (latitude, longitude, callback) => {
 }
 
 module.exports = forecast;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // const url = 'http://api.weatherstack.com/current?access_key=9758d3d126300bbf3550b7113655ec2a&query=59.3293,18.0686'
-// request({ url , json: true }, (error, response)=>{
-//   const data = response.body;
-// console.log(data.location.region + ': ' + data.current.weather_descriptions[0] +'. its currently ' + data.current.temperature + ' celcius and it feels like ' + data.current.feelslike + ' celecius' );
-// });

@@ -4,6 +4,8 @@ const router = require('./router');
 const app = express();
 const hbs = require('hbs');
 const port = process.env.PORT || 3000;
+const dotenv = require('dotenv');
+dotenv.config();
 
 // const public = path.join(__dirname,'../public');
 //no need for this if the templates folder called views 
